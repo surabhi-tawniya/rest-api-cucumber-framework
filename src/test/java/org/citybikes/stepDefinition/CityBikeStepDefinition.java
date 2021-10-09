@@ -21,7 +21,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class CityBikeStepDefinition     {
+public class CityBikeStepDefinition  {
 
   private RequestSpecification request;
   private ValidatableResponse response;
@@ -30,13 +30,12 @@ public class CityBikeStepDefinition     {
   private ConfigFileReader configFileReader;
 
   public CityBikeStepDefinition(ConfigFileReader configFileReader) {
-    this.configFileReader = configFileReader;
+            this.configFileReader = configFileReader;
   }
 
   @Given("I access the bike sharing api url")
   public void i_access_the_bike_sharing_api_url() throws IOException {
     System.out.println("******************* - step def -"+ this);
-
     Properties properties = configFileReader.loadEnvironmentProperties();
     System.out.println("************Entered in loadEnvironmentProperties method*********** ");
     request = given().log().all()
